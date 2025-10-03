@@ -1,0 +1,14 @@
+{
+  "name": "jr-sqa-assessment-playwright-js",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "install:browsers": "npx playwright install --with-deps",
+    "report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.2"
+  }
+}
