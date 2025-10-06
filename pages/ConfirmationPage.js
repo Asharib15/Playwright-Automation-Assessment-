@@ -1,4 +1,4 @@
-const { expect } = require('@playwright/test');
+const { expect } = require("@playwright/test");
 
 class ConfirmationPage {
   /**
@@ -6,8 +6,8 @@ class ConfirmationPage {
    */
   constructor(page) {
     this.page = page;
-    this.thankYouHeader = page.locator('h1', { hasText: 'Thank you' });
-    this.orderNumberBlock = page.locator('.order-number');
+    this.thankYouHeader = page.locator("h1", { hasText: "Thank you" });
+    this.orderNumberBlock = page.locator(".order-number");
   }
 
   async assertThankYou() {
@@ -15,10 +15,10 @@ class ConfirmationPage {
   }
 
   async getOrderNumber() {
-    const text = (await this.orderNumberBlock.textContent()) || '';
+    const text = (await this.orderNumberBlock.textContent()) || "";
     const match = text.match(/Order number:\s*(\d+)/i);
     expect(match).not.toBeNull();
-    return match ? match[1] : '';
+    return match ? match[1] : "";
   }
 }
 

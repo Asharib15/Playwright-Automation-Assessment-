@@ -1,4 +1,4 @@
-const { expect } = require('@playwright/test');
+const { expect } = require("@playwright/test");
 
 class HomePage {
   /**
@@ -7,13 +7,17 @@ class HomePage {
   constructor(page) {
     this.page = page;
     this.registerLink = page.locator('a[href="/register"]');
-    this.computersLink = page.locator('ul.top-menu a', { hasText: 'Computers' }).first();
-    this.notebooksLink = page.locator('ul.top-menu a', { hasText: 'Notebooks' }).first();
-    this.cartQty = page.locator('span.cart-qty');
+    this.computersLink = page
+      .locator("ul.top-menu a", { hasText: "Computers" })
+      .first();
+    this.notebooksLink = page
+      .locator("ul.top-menu a", { hasText: "Notebooks" })
+      .first();
+    this.cartQty = page.locator("span.cart-qty");
   }
 
   async goto() {
-    await this.page.goto('/');
+    await this.page.goto("/");
     await expect(this.page).toHaveTitle(/Demo Web Shop/i);
   }
 

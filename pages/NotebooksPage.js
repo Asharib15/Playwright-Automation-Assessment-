@@ -3,7 +3,7 @@ const { expect } = require("@playwright/test");
 class NotebooksPage {
   constructor(page) {
     this.page = page;
-    // Use exact: true so only the text link is matched, not the image link
+
     this.productLink = page.getByRole("link", {
       name: "14.1-inch Laptop",
       exact: true,
